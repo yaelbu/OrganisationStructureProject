@@ -7,12 +7,12 @@ namespace Organisation.Models
 {
     public class User
     {
-        public int UserId { get; set; }
+        public int IdUser { get; set; }
         public string Firstnane { get; set; }
         public string Lastname { get; set; }
         public string Status { get; set; }
         public string Position { get; set; }
-        public int ManagerId { get; set; }
-        public string Image { get; set; }
+        public int IdManager { get; set; }
+        public string Picture { get; set; }
     }
 }

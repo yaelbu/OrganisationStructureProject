@@ -12,11 +12,11 @@ namespace Organisation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeeController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly IConfiguration _configuration;
 
-        public EmployeeController(IConfiguration configuration)
+        public UserController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -26,8 +26,8 @@ namespace Organisation.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    select UserId,Firstname,Lastname,Status,Position,ManagerId,Picture from
-                    dbo.User
+                    select IdUser,Firstname,Lastname,Status,Position,IdManager,Picture from
+                    dbo.Users
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("UserAppCon");
